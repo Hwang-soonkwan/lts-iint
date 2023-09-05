@@ -23,7 +23,7 @@ public class PolicyHandler {
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
 
-    @Autowired
-    ProductService productService;
+    //@Autowired
+    //ProductService productService;
 }
 //>>> Clean Arch / Inbound Adaptor
