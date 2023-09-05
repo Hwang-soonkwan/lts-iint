@@ -54,7 +54,7 @@
                             [ ProdName :  {{data.prodName }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Standard :  {{data.standard }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ ProductType :  {{data.productType }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ ProgressIds :  {{data.progressIds }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ ManufacturingProcessIds :  {{data.manufacturingProcessIds }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -127,7 +127,7 @@
                 'prodName': '',
                 'standard': '',
                 'productType': '',
-                'progressIds': [],
+                'manufacturingProcessIds': [],
             }
         },
         methods: {

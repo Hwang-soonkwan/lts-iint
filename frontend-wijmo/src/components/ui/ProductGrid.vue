@@ -36,15 +36,20 @@
             style="margin-top:10px; max-height:65vh;"
             class="wj-felx-grid"
         >
-            <wj-flex-grid-filter :filterColumns="['RowHeader','prodNo','prodNumber','prodName','standard','productType','progressIds',]" />
+            <wj-flex-grid-filter :filterColumns="['RowHeader','prodNo','prodNumber','prodName','standard','productType','manufacturingProcessIds',]" />
             <wj-flex-grid-cell-template cellType="RowHeader" v-slot="cell">{{cell.row.index + 1}}</wj-flex-grid-cell-template>
             <wj-flex-grid-column binding="prodNo" header="제품고유번호" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="prodNumber" header="품번" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="prodName" header="품명" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="standard" header="규격" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="productType" header="ProductType" width="2*" :isReadOnly="true" align="center" />
+            <wj-flex-grid-column binding="manufacturingProcessId" header="ManufacturingProcess" width="2*" :isReadOnly="true" align="center">
+                <wj-flex-grid-cell-template cellType="Cell" v-slot="cell">   
+                    <ManufacturingProcessId v-model="cell.item.manufacturingProcessId" :editMode="editMode"></ManufacturingProcessId>
+                </wj-flex-grid-cell-template>
+            </wj-flex-grid-column>
         </wj-flex-grid>
-        <ProgressIdDetailGrid label="ProgressIds" offline v-if="selectedRow" v-model="selectedRow.progressIds"/>
+        <ManufacturingProcessIdDetailGrid label="ManufacturingProcessIds" offline v-if="selectedRow" v-model="selectedRow.manufacturingProcessIds"/>
         <v-col>
             <v-dialog
                 v-model="openDialog"
@@ -124,7 +129,7 @@ export default {
                         'prodName': '',
                         'standard': '',
                         'productType': {},
-                        'progressIds': [],
+                        'manufacturingProcessIds': [],
                     }
                 }
             }

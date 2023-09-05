@@ -38,6 +38,46 @@ spec:
             periodSeconds: 5
             failureThreshold: 5
 
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: progress
+  labels:
+    app: progress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: progress
+  template:
+    metadata:
+      labels:
+        app: progress
+    spec:
+      containers:
+        - name: progress
+          image: username/progress:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
 
 ---
 
@@ -54,4 +94,21 @@ spec:
       targetPort: 8080
   selector:
     app: basic
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: progress
+  labels:
+    app: progress
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: progress
 

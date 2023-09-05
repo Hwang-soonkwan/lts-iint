@@ -30,6 +30,7 @@ jobs:
       - name: Build Maven Projects
         run: |
           mvn clean package -f ./basic/pom.xml
+          mvn clean package -f ./progress/pom.xml
 
       - name: Docker Build and push for Basic
         uses: docker/build-push-action@v4
@@ -40,4 +41,14 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/basic:latest
             ghcr.io/${{ github.repository }}/basic:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Progress
+        uses: docker/build-push-action@v4
+        with:
+          context: ./progress
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/progress:latest
+            ghcr.io/${{ github.repository }}/progress:${{ github.ref_name }}
             

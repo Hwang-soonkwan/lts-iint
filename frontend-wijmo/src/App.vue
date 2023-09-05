@@ -126,11 +126,20 @@ export default {
                     { key: 'products', url: '/products', name: '제품마스터' },
                 ]
             },
+            { id: 'progress', title: '제조공정',
+                items: [
+                    { key: 'manufacturingProcesses', url: '/manufacturingProcesses', name: 'ManufacturingProcess' },
+                ]
+            },
         ],
         cards: [
             {
                 text: "제품마스터",
                 link: "/products",
+            },
+            {
+                text: "ManufacturingProcess",
+                link: "/manufacturingProcesses",
             },
         ],
         activeMenu: null

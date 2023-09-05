@@ -71,7 +71,7 @@
                     { text: "prodName", value: "prodName" },
                     { text: "standard", value: "standard" },
                     { text: "productType", value: "productType" },
-                    { text: "progressIds", value: "progressIds" },
+                    { text: "manufacturingProcessIds", value: "manufacturingProcessIds" },
                 ],
             product : [],
             newValue: {},
@@ -94,7 +94,7 @@
                 'prodName': '',
                 'standard': '',
                 'productType': '',
-                'progressIds': [],
+                'manufacturingProcessIds': [],
             }
         },
         methods: {

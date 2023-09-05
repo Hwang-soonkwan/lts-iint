@@ -26,7 +26,7 @@ public class Product {
     private ProductType productType;
 
     @ElementCollection
-    private List<ProgressId> progressIds;
+    private List<ManufacturingProcessId> manufacturingProcessIds;
 
     public static ProductRepository repository() {
         ProductRepository productRepository = BasicApplication.applicationContext.getBean(

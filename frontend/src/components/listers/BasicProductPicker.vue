@@ -30,7 +30,7 @@
                                 ProductType :  {{item.productType }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
-                                ProgressIds :  {{item.progressIds }}
+                                ManufacturingProcessIds :  {{item.manufacturingProcessIds }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
 

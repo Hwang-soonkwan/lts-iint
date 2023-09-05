@@ -46,6 +46,18 @@
                     </v-list-item>
 
 
+                    <v-list-item
+                        class="px-2"
+                        key="manufacturingProcesses"
+                        to="/progresses/manufacturingProcesses"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        ManufacturingProcess
+                    </v-list-item>
+
+
                 </v-list>
             </v-navigation-drawer>
         </div>
@@ -129,6 +141,13 @@ export default {
                 description: '', 
                 key: 'products', 
                 route: '/basics/products',
+                ImageUrl: '',
+            },
+            { 
+                title: 'ManufacturingProcess', 
+                description: '', 
+                key: 'manufacturingProcesses', 
+                route: '/progresses/manufacturingProcesses',
                 ImageUrl: '',
             },
             

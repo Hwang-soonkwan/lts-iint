@@ -13,7 +13,7 @@ import org.springframework.beans.BeanUtils;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProgressId {
+public class ManufacturingProcessId {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

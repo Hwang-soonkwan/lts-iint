@@ -27,7 +27,7 @@
 import BaseDetailGrid from '../base-ui/BaseDetailGrid';
 
 export default {
-    name: 'ProgressIdDetailGrid',
+    name: 'ManufacturingProcessIdDetailGrid',
     mixins: [BaseDetailGrid],
     components: {
     },
