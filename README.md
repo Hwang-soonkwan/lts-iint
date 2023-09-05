@@ -32,7 +32,7 @@ mvn spring-boot:run
 ## Test by API
 - basic
 ```
- http :8088/products prodNo="prodNo" prodNumber="prodNumber" prodName="prodName" standard="standard" 
+ http :8088/products prodNo="prodNo" prodNumber="prodNumber" prodName="prodName" standard="standard" productType="productType" 
 ```
 
 

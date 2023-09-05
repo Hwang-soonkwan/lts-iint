@@ -20,6 +20,7 @@
             <String label="품번" v-model="value.prodNumber" :editMode="editMode" :inputUI="''"/>
             <String label="품명" v-model="value.prodName" :editMode="editMode" :inputUI="''"/>
             <String label="규격" v-model="value.standard" :editMode="editMode" :inputUI="''"/>
+            <ProductType offline label="ProductType" v-model="value.productType" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

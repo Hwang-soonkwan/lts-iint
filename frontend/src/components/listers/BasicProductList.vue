@@ -44,6 +44,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -51,6 +52,7 @@
                             [ ProdNumber :  {{data.prodNumber }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ ProdName :  {{data.prodName }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Standard :  {{data.standard }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ ProductType :  {{data.productType }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -122,6 +124,7 @@
                 'prodNumber': '',
                 'prodName': '',
                 'standard': '',
+                'productType': '',
             }
         },
         methods: {

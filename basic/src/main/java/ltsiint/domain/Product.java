@@ -23,6 +23,8 @@ public class Product {
 
     private String standard;
 
+    private ProductType productType;
+
     public static ProductRepository repository() {
         ProductRepository productRepository = BasicApplication.applicationContext.getBean(
             ProductRepository.class
