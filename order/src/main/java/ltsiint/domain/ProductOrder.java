@@ -77,6 +77,13 @@ public class ProductOrder {
         ProductOrderUpdated productOrderUpdated = new ProductOrderUpdated(this);
         productOrderUpdated.publishAfterCommit();
     }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public void productComplate(ProductComplateCommand productComplateCommand) {
+        //implement business logic here:
+
+    }
     //>>> Clean Arch / Port Method
 
 }

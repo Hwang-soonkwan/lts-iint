@@ -42,7 +42,7 @@
                         <v-list-item-title style="margin-bottom:10px;">
                             
                             
-                            
+                             ProdName 
                             
                             
                             

@@ -92,6 +92,20 @@
                     @updateProductOrder="updateProductOrder"
                 ></UpdateProductOrderCommand>
             </v-dialog>
+            <v-btn
+                v-if="!editMode"
+                color="primary"
+                text
+                @click="openProductComplate"
+            >
+                ProductComplate
+            </v-btn>
+            <v-dialog v-model="productComplateDiagram" width="500">
+                <ProductComplateCommand
+                    @closeDialog="closeProductComplate"
+                    @productComplate="productComplate"
+                ></ProductComplateCommand>
+            </v-dialog>
         </v-card-actions>
 
         <v-snackbar
@@ -136,6 +150,7 @@
                 text: '',
             },
             updateProductOrderDiagram: false,
+            productComplateDiagram: false,
         }),
 	async created() {
         },
@@ -258,6 +273,32 @@
             },
             closeUpdateProductOrder() {
                 this.updateProductOrderDiagram = false;
+            },
+            async productComplate(params) {
+                try {
+                    if(!this.offline) {
+                        var temp = await axios.put(axios.fixUrl(this.value._links['productcomplate'].href), params)
+                        for(var k in temp.data) {
+                            this.value[k]=temp.data[k];
+                        }
+                    }
+
+                    this.editMode = false;
+                    this.closeProductComplate();
+                } catch(e) {
+                    this.snackbar.status = true
+                    if(e.response && e.response.data.message) {
+                        this.snackbar.text = e.response.data.message
+                    } else {
+                        this.snackbar.text = e
+                    }
+                }
+            },
+            openProductComplate() {
+                this.productComplateDiagram = true;
+            },
+            closeProductComplate() {
+                this.productComplateDiagram = false;
             },
         },
     }

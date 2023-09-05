@@ -46,5 +46,30 @@ public class ProductOrderController {
         productOrderRepository.save(productOrder);
         return productOrder;
     }
+
+    @RequestMapping(
+        value = "productOrders/{id}/productcomplate",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8"
+    )
+    public ProductOrder productComplate(
+        @PathVariable(value = "id") Long id,
+        @RequestBody ProductComplateCommand productComplateCommand,
+        HttpServletRequest request,
+        HttpServletResponse response
+    ) throws Exception {
+        System.out.println("##### /productOrder/productComplate  called #####");
+        Optional<ProductOrder> optionalProductOrder = productOrderRepository.findById(
+            id
+        );
+
+        optionalProductOrder.orElseThrow(() -> new Exception("No Entity Found")
+        );
+        ProductOrder productOrder = optionalProductOrder.get();
+        productOrder.productComplate(productComplateCommand);
+
+        productOrderRepository.save(productOrder);
+        return productOrder;
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

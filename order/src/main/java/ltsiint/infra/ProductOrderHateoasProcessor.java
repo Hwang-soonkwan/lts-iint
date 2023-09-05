@@ -17,6 +17,13 @@ public class ProductOrderHateoasProcessor
                 .of(model.getRequiredLink("self").getHref() + "/uri")
                 .withRel("uri")
         );
+        model.add(
+            Link
+                .of(
+                    model.getRequiredLink("self").getHref() + "/productcomplate"
+                )
+                .withRel("productcomplate")
+        );
 
         return model;
     }

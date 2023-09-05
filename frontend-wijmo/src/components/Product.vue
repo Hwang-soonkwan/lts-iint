@@ -22,6 +22,7 @@
 
 
 <script>
+
 import BaseEntity from './base-ui/BaseEntity'
 
 export default {
