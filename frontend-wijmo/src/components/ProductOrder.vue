@@ -32,7 +32,6 @@
 <script>
 import Address from './vo/Address.vue';
 import Money from './vo/Money.vue';
-import Money from './vo/Money.vue';
 import BaseEntity from './base-ui/BaseEntity'
 
 export default {
@@ -40,7 +39,6 @@ export default {
     mixins:[BaseEntity],
     components:{
         Address,
-        Money,
         Money,
     },
     

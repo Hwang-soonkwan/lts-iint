@@ -45,7 +45,7 @@
             style="margin-top:10px; max-height:65vh;"
             class="wj-felx-grid"
         >
-            <wj-flex-grid-filter :filterColumns="['RowHeader','orderNumber','customerPartNumber','productName','deliveryLocation','orderAmount','orderQuantity','orderAmount','orderDate','deliveryDate','isUrgent','isConfirmed','memo','isDeleted','orderDetails',]" />
+            <wj-flex-grid-filter :filterColumns="['RowHeader','orderNumber','customerPartNumber','productName','deliveryLocation','orderQuantity','orderAmount','orderDate','deliveryDate','isUrgent','isConfirmed','memo','isDeleted','orderDetails',]" />
             <wj-flex-grid-cell-template cellType="RowHeader" v-slot="cell">{{cell.row.index + 1}}</wj-flex-grid-cell-template>
             <wj-flex-grid-column binding="orderNumber" header="번호" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="customerPartNumber" header="고객품번" width="2*" :isReadOnly="true" align="center" />
@@ -53,11 +53,6 @@
             <wj-flex-grid-column binding="deliveryLocation" header="납품처" width="2*" :isReadOnly="true" align="center">
                 <wj-flex-grid-cell-template cellType="Cell" v-slot="cell">   
                     <Address v-model="cell.item.deliveryLocation" :editMode="editMode"></Address>
-                </wj-flex-grid-cell-template>
-            </wj-flex-grid-column>
-            <wj-flex-grid-column binding="orderAmount" header="단가" width="2*" :isReadOnly="true" align="center">
-                <wj-flex-grid-cell-template cellType="Cell" v-slot="cell">   
-                    <Money v-model="cell.item.orderAmount" :editMode="editMode"></Money>
                 </wj-flex-grid-cell-template>
             </wj-flex-grid-column>
             <wj-flex-grid-column binding="orderQuantity" header="수주량" width="2*" :isReadOnly="true" align="center" />
@@ -160,7 +155,6 @@ export default {
                         'deliveryLocation': {},
                         'orderAmount': {},
                         'orderQuantity': 0,
-                        'orderAmount': {},
                         'orderDate': '2023-09-05',
                         'deliveryDate': '2023-09-05',
                         'isUrgent': false,
