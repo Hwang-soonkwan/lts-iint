@@ -11,6 +11,9 @@ import BasicProductDetail from "./components/listers/BasicProductDetail"
 import ProgressManufacturingProcessManager from "./components/listers/ProgressManufacturingProcessCards"
 import ProgressManufacturingProcessDetail from "./components/listers/ProgressManufacturingProcessDetail"
 
+import OrderProductOrderManager from "./components/listers/OrderProductOrderCards"
+import OrderProductOrderDetail from "./components/listers/OrderProductOrderDetail"
+
 
 export default new Router({
     // mode: 'history',
@@ -36,6 +39,17 @@ export default new Router({
                 path: '/progresses/manufacturingProcesses/:id',
                 name: 'ProgressManufacturingProcessDetail',
                 component: ProgressManufacturingProcessDetail
+            },
+
+            {
+                path: '/orders/productOrders',
+                name: 'OrderProductOrderManager',
+                component: OrderProductOrderManager
+            },
+            {
+                path: '/orders/productOrders/:id',
+                name: 'OrderProductOrderDetail',
+                component: OrderProductOrderDetail
             },
 
 

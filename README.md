@@ -22,6 +22,7 @@ See the README.md files inside the each microservices directory:
 
 - basic
 - progress
+- order
 
 
 ## Run API Gateway (Spring Gateway)
@@ -38,6 +39,10 @@ mvn spring-boot:run
 - progress
 ```
  http :8088/manufacturingProcesses processName="processName" 
+```
+- order
+```
+ http :8088/productOrders orderNumber="orderNumber" customerPartNumber="customerPartNumber" productName="productName" deliveryLocation="deliveryLocation" orderAmount="orderAmount" orderQuantity="orderQuantity" orderAmount="orderAmount" orderDate="orderDate" deliveryDate="deliveryDate" isUrgent="isUrgent" isConfirmed="isConfirmed" memo="memo" isDeleted="isDeleted" orderDetails="orderDetails" 
 ```
 
 

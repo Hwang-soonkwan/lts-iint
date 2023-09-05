@@ -13,6 +13,7 @@
                         
                         <v-list-item-content>
                             <v-list-item-title>
+                                {{item.processName }}
                             </v-list-item-title>
                             <v-list-item-subtitle>
                                 ProcessName :  {{item.processName }}
@@ -68,7 +69,7 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['processName'] = arr[4]; 
-                    
+                    obj['nameField'] = this.list[val].processName; 
                     this.$emit('selected', obj);
                 }
             },

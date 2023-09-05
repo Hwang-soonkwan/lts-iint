@@ -31,6 +31,7 @@ jobs:
         run: |
           mvn clean package -f ./basic/pom.xml
           mvn clean package -f ./progress/pom.xml
+          mvn clean package -f ./order/pom.xml
 
       - name: Docker Build and push for Basic
         uses: docker/build-push-action@v4
@@ -51,4 +52,14 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/progress:latest
             ghcr.io/${{ github.repository }}/progress:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Order
+        uses: docker/build-push-action@v4
+        with:
+          context: ./order
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/order:latest
+            ghcr.io/${{ github.repository }}/order:${{ github.ref_name }}
             

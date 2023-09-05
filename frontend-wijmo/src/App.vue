@@ -131,6 +131,11 @@ export default {
                     { key: 'manufacturingProcesses', url: '/manufacturingProcesses', name: 'ManufacturingProcess' },
                 ]
             },
+            { id: 'order', title: '제품주문',
+                items: [
+                    { key: 'productOrders', url: '/productOrders', name: '주문' },
+                ]
+            },
         ],
         cards: [
             {
@@ -140,6 +145,10 @@ export default {
             {
                 text: "ManufacturingProcess",
                 link: "/manufacturingProcesses",
+            },
+            {
+                text: "주문",
+                link: "/productOrders",
             },
         ],
         activeMenu: null

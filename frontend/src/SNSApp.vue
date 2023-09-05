@@ -58,6 +58,18 @@
                     </v-list-item>
 
 
+                    <v-list-item
+                        class="px-2"
+                        key="productOrders"
+                        to="/orders/productOrders"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        주문
+                    </v-list-item>
+
+
                 </v-list>
             </v-navigation-drawer>
         </div>
@@ -148,6 +160,13 @@ export default {
                 description: '', 
                 key: 'manufacturingProcesses', 
                 route: '/progresses/manufacturingProcesses',
+                ImageUrl: '',
+            },
+            { 
+                title: '주문', 
+                description: '제품 주문에 대한 어그리거트', 
+                key: 'productOrders', 
+                route: '/orders/productOrders',
                 ImageUrl: '',
             },
             

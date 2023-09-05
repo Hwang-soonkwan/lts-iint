@@ -16,7 +16,7 @@
         </v-card-title >        
 
         <v-card-text>
-            <String v-if="editMode" label="ProcessName" v-model="value.processName" :editMode="editMode" :inputUI="'TEXT'"/>
+            <String v-if="editMode" label="ProcessName" v-model="value.processName" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>
