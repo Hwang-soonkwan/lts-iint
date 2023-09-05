@@ -9,6 +9,8 @@ import ProductManager from "./components/ui/ProductGrid"
 
 import ManufacturingProcessManager from "./components/ui/ManufacturingProcessGrid"
 
+import ProductOrderManager from "./components/ui/ProductOrderGrid"
+
 
 export default new Router({
     // mode: 'history',
@@ -24,6 +26,12 @@ export default new Router({
                 path: '/manufacturingProcesses',
                 name: 'ManufacturingProcessManager',
                 component: ManufacturingProcessManager
+            },
+
+            {
+                path: '/productOrders',
+                name: 'ProductOrderManager',
+                component: ProductOrderManager
             },
 
 
