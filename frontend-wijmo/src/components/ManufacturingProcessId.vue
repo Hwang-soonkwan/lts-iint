@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BasePicker v-if="editMode" searchApiPath="progresses/search/findBy" searchParameterName=""  idField="" nameField="" path="progresses" label="ProgressId" v-model="value" @selected="pick" :editMode="editMode" />
+        <BasePicker v-if="editMode" searchApiPath="manufacturingprocesses/search/findBy" searchParameterName=""  idField="processName" nameField="" path="manufacturingprocesses" label="ManufacturingProcessId" v-model="value" @selected="pick" :editMode="editMode" />
         <div v-else style="height:100%">
             <span>{{ value && value.name ? value.name : '' }}</span>
         </div>
@@ -12,12 +12,12 @@
 import BaseEntity from './base-ui/BaseEntity'
 
 export default {
-    name: 'ProgressId',
+    name: 'ManufacturingProcessId',
     mixins:[BaseEntity],
     components:{
     },
     data: () => ({
-        path: 'progresses',
+        path: 'manufacturingprocesses',
     }),
     props: {
     },

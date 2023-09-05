@@ -5,7 +5,7 @@
         <String label="품명" v-model="value.prodName" :editMode="editMode"/>
         <String label="규격" v-model="value.standard" :editMode="editMode"/>
         <ProductType offline label="ProductType" v-model="value.productType" :editMode="editMode" @change="change"/>
-        <ProgressIdDetailGrid label="ProgressIds" offline v-model="value.progressIds" :editMode="editMode" @change="change"/>
+        <ManufacturingProcessIdDetailGrid label="ManufacturingProcessIds" offline v-model="value.manufacturingProcessIds" :editMode="editMode" @change="change"/>
 
         <v-divider class="border-opacity-100 my-divider"></v-divider>
         <v-layout row justify-end>

@@ -4,7 +4,7 @@
             <v-list-group v-model="isExpansion">
                 <template v-slot:activator>
                     <v-list-item-content>
-                        <v-list-item-title>ProgressId</v-list-item-title>
+                        <v-list-item-title>ManufacturingProcessId</v-list-item-title>
                     </v-list-item-content>
                 </template>
             
@@ -24,7 +24,7 @@
             </v-list-group>
         </v-list>
 
-        <ProgressId v-if="editMode && tick" offline :isNew="true" :inList="true"
+        <ManufacturingProcessId v-if="editMode && tick" offline :isNew="true" :inList="true"
                 :editMode="editMode" v-model="newValue" @add="append">
             <template slot="actions">
                 <v-spacer></v-spacer>
@@ -54,17 +54,17 @@
                     Delete
                 </v-btn>
             </template>
-        </ProgressId>
+        </ManufacturingProcessId>
     </div>
 </template>
 
 <script>
-    import ProgressId from '../ProgressId.vue';
+    import ManufacturingProcessId from '../ManufacturingProcessId.vue';
 
     export default {
-        name: 'ProgressIdManager',
+        name: 'ManufacturingProcessIdManager',
         components: {
-            ProgressId
+            ManufacturingProcessId
         },
         props: {
             value: [Object, String, Number, Boolean, Array],

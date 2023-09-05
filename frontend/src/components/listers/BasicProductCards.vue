@@ -114,7 +114,7 @@
                 'prodName': '',
                 'standard': '',
                 'productType': '',
-                'progressIds': [],
+                'manufacturingProcessIds': [],
             }
         },
         methods:{

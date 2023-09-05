@@ -21,6 +21,7 @@ cd /bin
 See the README.md files inside the each microservices directory:
 
 - basic
+- progress
 
 
 ## Run API Gateway (Spring Gateway)
@@ -32,7 +33,11 @@ mvn spring-boot:run
 ## Test by API
 - basic
 ```
- http :8088/products prodNo="prodNo" prodNumber="prodNumber" prodName="prodName" standard="standard" productType="productType" progressIds="progressIds" 
+ http :8088/products prodNo="prodNo" prodNumber="prodNumber" prodName="prodName" standard="standard" productType="productType" manufacturingProcessIds="manufacturingProcessIds" 
+```
+- progress
+```
+ http :8088/manufacturingProcesses processName="processName" 
 ```
 
 

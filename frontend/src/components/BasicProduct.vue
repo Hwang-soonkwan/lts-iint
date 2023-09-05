@@ -21,8 +21,8 @@
             <String label="품명" v-model="value.prodName" :editMode="editMode" :inputUI="''"/>
             <String label="규격" v-model="value.standard" :editMode="editMode" :inputUI="''"/>
             <ProductType offline label="ProductType" v-model="value.productType" :editMode="editMode" @change="change"/>
-            <List&lt;ProgressId&gt; offline label="ProgressIds" v-model="value.progressIds" :editMode="editMode" @change="change"/>
-            <ProgressIdManager offline label="ProgressIds" v-model="value.progressIds" :editMode="editMode" @change="change"/>
+            <List&lt;ManufacturingProcessId&gt; offline label="ManufacturingProcessIds" v-model="value.manufacturingProcessIds" :editMode="editMode" @change="change"/>
+            <ManufacturingProcessIdManager offline label="ManufacturingProcessIds" v-model="value.manufacturingProcessIds" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

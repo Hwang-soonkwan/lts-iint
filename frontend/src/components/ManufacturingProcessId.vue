@@ -1,14 +1,14 @@
 <template>
     <v-card outlined @click="openDialog">
         <v-card-title>
-            Progress : {{ referenceValue ? referenceValue.name : '' }}
+            ManufacturingProcess : {{ referenceValue ? referenceValue.name : '' }}
         </v-card-title>
 
         <v-dialog v-model="pickerDialog">
             <v-card>
-                <v-card-title>Progress</v-card-title>
+                <v-card-title>ManufacturingProcess</v-card-title>
                 <v-card-text>
-                    <ProgressPicker v-model="value" @selected="pick"/>
+                    <ManufacturingProcessPicker v-model="value" @selected="pick"/>
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
@@ -24,7 +24,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'ProgressId',
+        name: 'ManufacturingProcessId',
         components:{},
         props: {
             value: [Object, String, Number, Boolean, Array],
@@ -48,7 +48,7 @@
             }
             else {
                 this.newValue = this.value;
-                var path = '/progresses';
+                var path = '/manufacturingprocesses';
                 var temp = await axios.get(axios.fixUrl(path + '/' +  Object.values(this.value)[0]));
                 if(temp.data) {
                     this.referenceValue = temp.data
@@ -89,7 +89,7 @@
                 this.$emit('change', this.value);
             },
             openDialog() {
-                var path = '/progresses/';
+                var path = '/manufacturingprocesses/';
 
                 if(this.editMode) {
                     this.pickerDialog = true;
@@ -100,7 +100,7 @@
             },
             async pick(val){
                 this.newValue = val;
-                var path = '/progresses';
+                var path = '/manufacturingprocesses';
                 var temp = await axios.get(axios.fixUrl(path + '/' + val.id));
                 if(temp.data) {
                     this.referenceValue = temp.data;
