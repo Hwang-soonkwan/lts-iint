@@ -114,6 +114,7 @@
                 'prodName': '',
                 'standard': '',
                 'productType': '',
+                'progressIds': [],
             }
         },
         methods:{

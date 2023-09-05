@@ -25,6 +25,9 @@ public class Product {
 
     private ProductType productType;
 
+    @ElementCollection
+    private List<ProgressId> progressIds;
+
     public static ProductRepository repository() {
         ProductRepository productRepository = BasicApplication.applicationContext.getBean(
             ProductRepository.class
