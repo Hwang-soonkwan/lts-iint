@@ -17,6 +17,7 @@
             <div>
                 <String label="Standard" v-model="item.standard" :editMode="editMode" @change="change" />
             </div>
+            <ProductType offline label="ProductType" v-model="item.productType" :editMode="false" :key="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>
