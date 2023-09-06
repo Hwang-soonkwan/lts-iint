@@ -13,6 +13,7 @@
                         
                         <v-list-item-content>
                             <v-list-item-title>
+                                {{item.prodName }}
                             </v-list-item-title>
                             <v-list-item-subtitle>
                                 ProdNo :  {{item.prodNo }}
@@ -87,7 +88,7 @@
                     
                     
                     
-                    
+                    obj['nameField'] = this.list[val].prodName; 
                     
                     
                     

@@ -30,16 +30,12 @@
 
 
 <script>
-import Address from './vo/Address.vue';
-import Money from './vo/Money.vue';
 import BaseEntity from './base-ui/BaseEntity'
 
 export default {
     name: 'ProductOrder',
     mixins:[BaseEntity],
     components:{
-        Address,
-        Money,
     },
     
     data: () => ({

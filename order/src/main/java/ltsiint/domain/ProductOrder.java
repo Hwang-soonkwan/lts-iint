@@ -26,9 +26,6 @@ public class ProductOrder {
     @Embedded
     private Address deliveryLocation;
 
-    @Embedded
-    private Money orderAmount;
-
     private Integer orderQuantity;
 
     @Embedded
@@ -76,6 +73,13 @@ public class ProductOrder {
 
         ProductOrderUpdated productOrderUpdated = new ProductOrderUpdated(this);
         productOrderUpdated.publishAfterCommit();
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public void productComplate(ProductComplateCommand productComplateCommand) {
+        //implement business logic here:
+        System.out.println();
     }
     //>>> Clean Arch / Port Method
 

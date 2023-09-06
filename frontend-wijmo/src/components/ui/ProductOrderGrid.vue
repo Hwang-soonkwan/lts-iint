@@ -20,11 +20,21 @@
                     @updateProductOrder="updateProductOrder"
                 ></UpdateProductOrderCommand>
             </v-dialog>
+            <v-btn @click="productComplateDialog = true" class="contrast-primary-text" small color="primary" >
+                <v-icon small>mdi-minus-circle-outline</v-icon>생산완료
+            </v-btn>
+            <v-dialog v-model="productComplateDialog" width="500">
+                <ProductComplateCommand
+                    @closeDialog="productComplateDialog = false"
+                    @productComplate="productComplate"
+                ></ProductComplateCommand>
+            </v-dialog>
             <v-btn @click="deleteSelectedRows" class="contrast-primary-text" small color="primary" :disabled="!hasRole('Actor Name')">
                 <v-icon small>mdi-minus-circle-outline</v-icon>삭제
             </v-btn>
             <excel-export-button class="contrast-primary-text" :exportService="this.exportService" :getFlex="getFlex" />
         </div>
+        <OrderSearch @search="search"></OrderSearch>
 
 
         <!-- the grid -->
@@ -142,6 +152,7 @@ export default {
     data: () => ({
         path: 'productOrders',
         updateProductOrderDialog: false,
+        productComplateDialog: false,
     }),
     watch: {
         newValue: {
@@ -172,6 +183,14 @@ export default {
             try{
                 this.repository.invoke(this.getSelectedItem(), "updateProductOrder", params)
                 this.$EventBus.$emit('show-success','UpdateProductOrder 성공적으로 처리되었습니다.')
+            }catch(e){
+                this.$EventBus.$emit('show-error', e);
+            }
+        },
+        productComplate(params){
+            try{
+                this.repository.invoke(this.getSelectedItem(), "productComplate", params)
+                this.$EventBus.$emit('show-success','ProductComplate 성공적으로 처리되었습니다.')
             }catch(e){
                 this.$EventBus.$emit('show-error', e);
             }
